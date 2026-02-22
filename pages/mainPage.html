@@ -1,11 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Home Budget - Główna</title>
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  
+
+<div class="overlay" id="overlay"></div>
+<div class="container">
+  <header class="header">
+    <nav class="navbar" id="navigation">
+      <a href="mainPage.html" class="active">Strona główna</a>
+      <a href="expense.html">Wydatek</a>
+      <a href="income.html">Przychód</a>
+      <a href="budgetBalance.html">Bilans</a>
+      <a href="settings.html">Ustawienia</a>
+      <a href="login.html">Wyloguj</a>
+    </nav>
+    <img id="menuToggle" class="hamburger" src="../assets/Ham.svg" alt="menu">
+  </header>
+
+  <main class="form-container home-balance">
+    <h1>Mały bilans</h1>
+    <div class="balance-content">
+      <div class="balance-text">
+        <p><strong>Dostępne środki:</strong> 16 351 zł</p>
+        <p><strong>Ostatni wydatek:</strong> kat 3216</p>
+      </div>
+      <div class="balance-chart">
+        <img src="../assets/chart.png" alt="Balance chart" class="chart-image">
+      </div>
+    </div>
+    <a href="budgetBalance.html" class="more-link">Więcej</a>
+    <div class="adding-buttons">
+      <a href="expense.html" class="add-btn">+ Wydatek</a>
+      <a href="income.html" class="add-btn">+ Przychód</a>
+    </div>
+  </main>
+
+  <div class="bottom-buttons">
+    <a href="settings.html" class="settings">Ustawienia</a>
+    <a href="login.html" class="logout">Wyloguj się</a>
+  </div>
+</div>
+
+<script src="../Scripts.js"></script>
 </body>
 </html>

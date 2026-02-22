@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dodaj wydatek</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="overlay" id="overlay"></div>
+<div class="container">
+  <header class="header">
+    <nav class="navbar" id="navigation">
+      <a href="mainPage.html">Strona główna</a>
+      <a href="expense.html" class="active">Wydatek</a>
+      <a href="income.html">Przychód</a>
+      <a href="budgetBalance.html">Bilans</a>
+      <a href="settings.html">Ustawienia</a>
+      <a href="login.html">Wyloguj</a>
+    </nav>
+    <img id="menuToggle" class="hamburger" src="../assets/Ham.svg" alt="menu">
+  </header>
+
+  <main class="form-container">
+    <h1>Dodaj wydatek</h1>
+    <form>
+      <input type="text" placeholder="Nazwa wydatku" required>
+      <input type="number" placeholder="Kwota (zł)" required>
+      <input type="text" placeholder="Sposób płatności">
+      <textarea placeholder="Opis (opcjonalnie)"></textarea>
+      <div class="adding-buttons">
+        <button class="add-btn" type="submit">Zapisz</button>
+        <a href="mainPage.html" class="add-btn" style="background:#777;">Anuluj</a>
+      </div>
+    </form>
+  </main>
+
+  <div class="bottom-buttons">
+    <a href="settings.html" class="settings">Ustawienia</a>
+    <a href="login.html" class="logout">Wyloguj się</a>
+  </div>
+</div>
+
+<script src="../Scripts.js"></script>
+</body>
+</html>
