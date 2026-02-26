@@ -1,6 +1,3 @@
-/* =====================================================
-   🧩 GLOBALNE STYLY I ZMIENNE
-===================================================== */
 :root {
   --color-primary: #000000;        /* główne akcenty i tekst */
   --color-secondary: #E0E0E0;      /* tło paneli */
@@ -19,7 +16,7 @@
 }
 
 /* =====================================================
-   🧱 UKŁAD PODSTAWOWY
+  UKŁAD PODSTAWOWY
 ===================================================== */
 body, html {
   margin: 0;
@@ -28,21 +25,23 @@ body, html {
   background-color: var(--color-bg-main);
   color: var(--color-text-primary);
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
 }
 
 .container {
-  width: 1400px;
-  height: 800px;
+  width: 100%;
+  max-width: 1400px;
+  min-height: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  box-sizing: border-box;
 }
 
 /* =====================================================
-   🧭 NAWIGACJA I HAMBURGER
+  NAWIGACJA I HAMBURGER
 ===================================================== */
 .header {
   position: relative;
@@ -72,13 +71,17 @@ body, html {
 }
 
 .hamburger {
-  display: none;
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  width: 35px;
-  height: 35px;
+  display: none;               
+  width: 36px;
+  height: 36px;
   cursor: pointer;
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 1002;
+  background: none !important;
+  border: none;
+  object-fit: contain;
 }
 
 .overlay {
@@ -97,7 +100,7 @@ body, html {
 }
 
 /* =====================================================
-   🏠 STRONA GŁÓWNA (mainPage.html)
+  STRONA GŁÓWNA 
 ===================================================== */
 .form-container {
   background-color: var(--color-bg-surface);
@@ -153,7 +156,7 @@ body, html {
 }
 
 /* =====================================================
-   💰 WYDATEK / PRZYCHÓD (expense.html / income.html)
+  WYDATEK / PRZYCHÓD
 ===================================================== */
 input, textarea, select {
   border: 1px solid var(--color-border);
@@ -170,7 +173,7 @@ textarea {
 }
 
 /* =====================================================
-   📊 BILANS (budgetBalance.html)
+  BILANS
 ===================================================== */
 .balance-table {
   border-collapse: collapse;
@@ -180,17 +183,134 @@ textarea {
 .balance-table th {
   background-color: var(--color-primary);
   color: var(--color-text-inverse);
-  padding: 5px 20px;
+  padding: 8px 20px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .balance-table td {
   border: 1px solid var(--color-border);
   height: 40px;
   width: 100px;
+  color: var(--color-text-primary);
+  text-align: center;
+  background-color: var(--color-bg-surface);
+  transition: background 0.2s;
+}
+
+.tables {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  overflow-x: auto;        
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.tables::-webkit-scrollbar {
+  height: 6px;
+}
+
+.tables::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+.balance-table {
+  flex: 1 1 45%;           
+  min-width: 280px;        
+  border-collapse: collapse;
+  background-color: var(--color-bg-surface);
+  transition: all 0.2s ease;
+}
+
+.balance-table th,
+.balance-table td {
+  text-align: center;
+  word-wrap: break-word;
 }
 
 /* =====================================================
-   ⚙️ USTAWIENIA (settings.html / userSettings.html)
+  KALENDARZ
+===================================================== */
+.calendar-dropdown {
+  position: absolute;
+  top: 200px;
+  right: 50%;
+  transform: translateX(50%);
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 15px;
+  width: 280px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2000;
+}
+
+.calendar-dropdown.active {
+  display: flex;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.calendar-header span {
+  font-weight: bold;
+  color: var(--color-text-primary);
+}
+
+.calendar-nav {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  width: 100%;
+}
+
+.calendar-day {
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--color-text-primary);
+  transition: background 0.2s;
+}
+
+.calendar-day:hover {
+  background-color: var(--color-secondary);
+}
+
+.calendar-day.selected {
+  background-color: var(--color-warning);
+  color: var(--color-text-inverse);
+}
+
+.calendar-day.in-range {
+  background-color: rgba(249,168,37,0.3);
+  border-radius: 5px;
+}
+
+/* =====================================================
+  USTAWIENIA
 ===================================================== */
 .add-btn {
   background-color: var(--color-primary);
@@ -235,7 +355,7 @@ textarea {
 }
 
 /* =====================================================
-   ✏️ EDYCJA I USUWANIE (editDelExpense.html / editDelIncome.html)
+ EDYCJA I USUWANIE 
 ===================================================== */
 .edit-table {
   width: 100%;
@@ -268,7 +388,7 @@ textarea {
 .logout.small:hover { background-color: #983f98; }
 
 /* =====================================================
-   🔐 REJESTRACJA / LOGOWANIE / RESET HASŁA
+  REJESTRACJA / LOGOWANIE / RESET HASŁA
 ===================================================== */
 .form-container.small {
   width: 400px;
@@ -286,22 +406,35 @@ textarea {
 }
 
 /* =====================================================
-   📱 RESPONSYWNOŚĆ
+  RESPONSYWNOŚĆ
 ===================================================== */
 @media (max-width: 900px) {
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
   .container {
     width: 100%;
+    max-width: 100%;
     height: auto;
-    padding: 20px;
+    min-height: 100vh; /* pełna wysokość ekranu */
+    padding: 0 10px 40px;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--color-bg-main);
+    align-items: stretch; /* rozciąga tło */
   }
 
-  .navbar { display: none; }
-
-  .hamburger {
-    display: block;
-    z-index: 1001;
+  /* Navbar desktop znika */
+  .navbar {
+    display: none;
   }
 
+
+  /* Mobile menu */
   .navbar.active {
     display: flex;
     flex-direction: column;
@@ -310,12 +443,13 @@ textarea {
     top: 0;
     right: 0;
     height: 100%;
-    width: 70%;
+    width: 75%;
     justify-content: flex-start;
     align-items: center;
     padding-top: 100px;
     border-left: 1px solid var(--color-border);
     z-index: 1000;
+    box-shadow: -4px 0 10px rgba(0,0,0,0.3);
   }
 
   .navbar.active a {
@@ -326,17 +460,63 @@ textarea {
     border-bottom: 1px solid var(--color-border);
   }
 
+  /* Formularze */
   .form-container {
-    width: 90%;
+    width: 95%;
+    max-width: 600px;
+    margin: 100px auto 0;
     padding: 25px;
-    margin-top: 80px;
+    box-sizing: border-box;
   }
 
-  .bottom-buttons { margin-top: 20px; }
+  .form-container h1 {
+    text-align: center;
+  }
+
+  /* Sekcja bilansu */
+  .tables {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .balance-table {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .table-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .charts {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .bar-chart,
+  .donut-chart {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+  }
+
+  /* Dolne przyciski */
+  .bottom-buttons {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
 }
 
 /* =====================================================
-   🌙 TRYB CIEMNY (Dark Mode)
+  TRYB CIEMNY (Dark Mode)
 ===================================================== */
 body.dark-mode {
   --color-bg-main: #121212;
@@ -344,8 +524,8 @@ body.dark-mode {
   --color-secondary: #2A2A2A;
   --color-border: #333333;
 
-  --color-text-primary: #EDEDED;     /* główny tekst */
-  --color-text-inverse: #000000;     /* odwrócony (np. przyciski) */
+  --color-text-primary: #EDEDED;     
+  --color-text-inverse: #000000;     
   --color-btn-primary: #BB2525;
   --color-btn-primary-hover: #A61B1B;
 
@@ -417,9 +597,24 @@ body.dark-mode .logout:hover {
   background-color: #A61B1B;
 }
 
-/* Hamburger menu */
-body.dark-mode .hamburger {
-  filter: invert(1); /* odwrócenie koloru na biały */
+body.dark-mode .balance-table {
+  background-color: var(--color-bg-surface);
+  border-color: var(--color-border);
+}
+
+body.dark-mode .balance-table th {
+  background-color: #2C2C2C;
+  color: #FFFFFF;
+}
+
+body.dark-mode .balance-table td {
+  background-color: #1C1C1C;
+  color: #EAEAEA;
+  border-color: #444444;
+}
+
+body.dark-mode .balance-table tr:hover td {
+  background-color: #333333;
 }
 
 /* Overlay */
