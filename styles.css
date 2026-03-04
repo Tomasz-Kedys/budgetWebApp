@@ -158,13 +158,33 @@ body, html {
 /* =====================================================
   WYDATEK / PRZYCHÓD
 ===================================================== */
-input, textarea, select {
+
+form {
+  width: 100%;
+  max-width: 450px;         
+  margin: 10px auto;           
+  display: flex;
+  flex-direction: column;
+  align-items: center;       
+  justify-content: center;
+}
+
+input,
+textarea,
+select {
   border: 1px solid var(--color-border);
   border-radius: 20px;
-  padding: 10px 15px;
+  padding: 15px 15px;
+  margin: 10px 0;
   font-size: 16px;
   color: var(--color-text-primary);
+  background-color: var(--color-bg-surface);
   width: 100%;
+  box-sizing: border-box;     
+}
+
+.adding-buttons{
+  margin-top: 10px;
 }
 
 textarea {
@@ -420,21 +440,18 @@ textarea {
     width: 100%;
     max-width: 100%;
     height: auto;
-    min-height: 100vh; /* pełna wysokość ekranu */
+    min-height: 100vh;
     padding: 0 10px 40px;
     margin: 0;
     box-sizing: border-box;
     background-color: var(--color-bg-main);
-    align-items: stretch; /* rozciąga tło */
+    align-items: stretch;
   }
 
-  /* Navbar desktop znika */
   .navbar {
     display: none;
   }
 
-
-  /* Mobile menu */
   .navbar.active {
     display: flex;
     flex-direction: column;
@@ -460,7 +477,6 @@ textarea {
     border-bottom: 1px solid var(--color-border);
   }
 
-  /* Formularze */
   .form-container {
     width: 95%;
     max-width: 600px;
@@ -473,7 +489,6 @@ textarea {
     text-align: center;
   }
 
-  /* Sekcja bilansu */
   .tables {
     flex-direction: column;
     align-items: center;
@@ -504,7 +519,6 @@ textarea {
     height: 200px;
   }
 
-  /* Dolne przyciski */
   .bottom-buttons {
     margin-top: 40px;
     width: 100%;
@@ -533,7 +547,6 @@ body.dark-mode {
   color: var(--color-text-primary);
 }
 
-/* Navbar */
 body.dark-mode .navbar {
   background-color: var(--color-secondary);
 }
@@ -546,14 +559,12 @@ body.dark-mode .navbar a.active {
   color: var(--color-btn-primary);
 }
 
-/* Formularze i panele */
 body.dark-mode .form-container {
   background-color: var(--color-bg-surface);
   color: var(--color-text-primary);
   border-color: var(--color-border);
 }
 
-/* Tekst i przyciski */
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
@@ -569,7 +580,6 @@ body.dark-mode textarea {
   border-color: var(--color-border);
 }
 
-/* Przyciski */
 body.dark-mode .add-btn {
   background-color: var(--color-btn-primary);
   color: #fff;
@@ -597,32 +607,27 @@ body.dark-mode .logout:hover {
   background-color: #A61B1B;
 }
 
-body.dark-mode .balance-table {
-  background-color: var(--color-bg-surface);
-  border-color: var(--color-border);
+body.dark-mode th {
+  color: var(--color-text-primary);
+  background-color: #2a2a2a;
+  border-color: #444;
 }
 
-body.dark-mode .balance-table th {
-  background-color: #2C2C2C;
-  color: #FFFFFF;
-}
-
-body.dark-mode .balance-table td {
+body.dark-mode td {
   background-color: #1C1C1C;
   color: #EAEAEA;
   border-color: #444444;
 }
 
-body.dark-mode .balance-table tr:hover td {
+body.dark-mode tr:hover td {
   background-color: #333333;
 }
 
-/* Overlay */
+
 body.dark-mode .overlay.active {
   background: rgba(255,255,255,0.15);
 }
 
-/* Mobile navbar w dark mode */
 body.dark-mode .navbar.active {
   background-color: var(--color-secondary);
 }
