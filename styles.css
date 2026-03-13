@@ -433,7 +433,7 @@ textarea {
 .logout.small:hover { background-color: #983f98; }
 
 /* =====================================================
-  REJESTRACJA / LOGOWANIE / RESET HASŁA
+  REJESTRACJA / LOGOWANIE
 ===================================================== */
 .form-container.small {
   width: 400px;
@@ -448,6 +448,102 @@ textarea {
 .form-container.small h1 {
   font-size: 26px;
   text-transform: capitalize;
+}
+
+/* =====================================================
+  DANE UŻYTKOWNIKA
+===================================================== */
+
+.user-data{
+  width:100%;
+  margin-top:20px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.user-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background-color:var(--color-secondary);
+  padding:15px 20px;
+  border-radius:10px;
+  border:1px solid var(--color-border);
+}
+
+.user-row span{
+  font-size:16px;
+  color:var(--color-text-primary);
+}
+
+.add-btn.small{
+  padding:6px 20px;
+  font-size:14px;
+  border-radius:15px;
+}
+
+
+/* =====================================================
+  POPUP EDYCJI DANYCH
+===================================================== */
+
+.popup-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:3000;
+}
+
+.popup-overlay.active{
+  display:flex;
+}
+
+.popup-box{
+  background:var(--color-bg-surface);
+  padding:30px;
+  border-radius:10px;
+  width:320px;
+  max-width:90%;
+  text-align:center;
+  border:1px solid var(--color-border);
+}
+
+.popup-box h2{
+  margin-top:0;
+  color:var(--color-text-primary);
+}
+
+.popup-box input{
+  width:100%;
+  padding:12px;
+  margin-top:15px;
+  border-radius:20px;
+  border:1px solid var(--color-border);
+  background:var(--color-bg-main);
+  color:var(--color-text-primary);
+  box-sizing:border-box;
+}
+
+.popup-buttons{
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+#cancel{
+  background:#888;
+}
+
+#cancel:hover{
+  background:#666;
 }
 
 /* =====================================================
@@ -659,4 +755,19 @@ body.dark-mode .navbar.active {
 
 body.dark-mode .navbar.active a {
   color: var(--color-text-primary);
+}
+
+body.dark-mode .popup-overlay{
+  background:rgba(0,0,0,0.8);
+}
+
+body.dark-mode .popup-box{
+  background:#1e1e1e;
+  border-color:#333;
+}
+
+body.dark-mode .popup-box input{
+  background:#2a2a2a;
+  border-color:#444;
+  color:#ededed;
 }
