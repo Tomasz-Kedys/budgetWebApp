@@ -166,3 +166,65 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+  /* =====================================================
+  EDYCJA DANYCH UŻYTKOWNIKA
+  ===================================================== */
+
+  let editType = "";
+
+  function openPopup(type){
+
+    const popup = document.getElementById("editPopup");
+    const title = document.getElementById("popupTitle");
+    const input = document.getElementById("popupInput");
+
+    if(!popup) return;
+
+    editType = type;
+
+    if(type === "name"){
+      title.textContent = "Zmień imię i nazwisko";
+      input.type = "text";
+      input.placeholder = "Wpisz nowe imię i nazwisko";
+    }
+
+    if(type === "email"){
+      title.textContent = "Zmień e-mail";
+      input.type = "email";
+      input.placeholder = "Wpisz nowy e-mail";
+    }
+
+    if(type === "password"){
+      title.textContent = "Zmień hasło";
+      input.type = "password";
+      input.placeholder = "Wpisz nowe hasło";
+    }
+
+    input.value = "";
+    popup.classList.add("active");
+  }
+
+  function closePopup(){
+    const popup = document.getElementById("editPopup");
+    popup.classList.remove("active");
+  }
+
+  function saveData(){
+
+    const input = document.getElementById("popupInput").value;
+
+    if(editType === "name"){
+      document.getElementById("userName").textContent = input;
+    }
+
+    if(editType === "email"){
+      document.getElementById("userEmail").textContent = input;
+    }
+
+    if(editType === "password"){
+      alert("Hasło zmienione (demo)");
+    }
+
+    closePopup();
+  }
