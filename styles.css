@@ -24,8 +24,13 @@ body, html {
   font-family: "Segoe UI", Arial, sans-serif;
   background-color: var(--color-bg-main);
   color: var(--color-text-primary);
-  height: 100%;
+  min-height: 100vh;
   display: block;
+
+  background-image: url('assets/white.png');
+  background-repeat: repeat;
+  background-size: contain;
+  background-attachment: scroll;
 }
 
 .container {
@@ -192,12 +197,20 @@ textarea {
   resize: none;
 }
 
+.add-btn #cancel{
+  background-color: #777;
+}
+
+.add-btn #cancel:active{
+  background-color: #77777793;
+}
+
 /* =====================================================
   BILANS
 ===================================================== */
 .balance-table {
-  border-collapse: collapse;
   background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
 }
 
 .balance-table th {
@@ -215,7 +228,6 @@ textarea {
   color: var(--color-text-primary);
   text-align: center;
   background-color: var(--color-bg-surface);
-  transition: background 0.2s;
 }
 
 .tables {
@@ -244,13 +256,25 @@ textarea {
   min-width: 280px;        
   border-collapse: collapse;
   background-color: var(--color-bg-surface);
-  transition: all 0.2s ease;
 }
 
 .balance-table th,
 .balance-table td {
   text-align: center;
   word-wrap: break-word;
+}
+
+.tables-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }
 
 /* =====================================================
@@ -312,7 +336,6 @@ textarea {
   cursor: pointer;
   font-size: 14px;
   color: var(--color-text-primary);
-  transition: background 0.2s;
 }
 
 .calendar-day:hover {
@@ -553,8 +576,20 @@ textarea {
 
   html, body {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     overflow-x: hidden;
+
+    background-image: url('assets/white-mobile.png');
+    background-repeat: repeat;
+    background-size: 300px;
+    background-attachment: scroll;
+  }
+
+  body.dark-mode {
+    background-image: url('assets/black-mobile.png');
+    background-repeat: repeat;
+    background-size: 300px;
+    background-attachment: scroll;
   }
 
   .container {
@@ -565,7 +600,6 @@ textarea {
     padding: 0 10px 40px;
     margin: 0;
     box-sizing: border-box;
-    background-color: var(--color-bg-main);
     align-items: stretch;
   }
 
@@ -666,6 +700,11 @@ body.dark-mode {
 
   background-color: var(--color-bg-main);
   color: var(--color-text-primary);
+
+  background-image: url('assets/black.png');
+  background-repeat: repeat;
+  background-size: contain;
+  background-attachment: scroll;
 }
 
 body.dark-mode .navbar {
@@ -747,14 +786,6 @@ body.dark-mode tr:hover td {
 
 body.dark-mode .overlay.active {
   background: rgba(255,255,255,0.15);
-}
-
-body.dark-mode .navbar.active {
-  background-color: var(--color-secondary);
-}
-
-body.dark-mode .navbar.active a {
-  color: var(--color-text-primary);
 }
 
 body.dark-mode .popup-overlay{
