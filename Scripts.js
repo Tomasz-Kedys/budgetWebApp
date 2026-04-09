@@ -136,7 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return (
       d1.getFullYear() === d2.getFullYear() &&
       d1.getMonth() === d2.getMonth() &&
-
       d1.getDate() === d2.getDate()
     );
   }
@@ -165,13 +164,32 @@ document.addEventListener('DOMContentLoaded', () => {
       renderCalendar(currentDate);
     });
   }
+
+  const applyDateBtn = document.getElementById('applyDateBtn');
+  const closeBtn = document.getElementById('closeBtn');
+
+  if (applyDateBtn) {
+    applyDateBtn.addEventListener('click', () => {
+
+      if (!startDate) {
+        alert("Wybierz datę");
+        return;
+      }
+
+      calendarDropdown.classList.remove('active');
+
+    });
+  }
+
+  if(closeBtn){
+    closeBtn.addEventListener('click',()=>{
+        calendarDropdown.classList.remove('active');
+    });
+  }
+
 });
 
-  /* =====================================================
-  EDYCJA DANYCH UŻYTKOWNIKA
-  ===================================================== */
-
-  let editType = "";
+let editType = "";
 
   function openPopup(type){
 
@@ -187,6 +205,12 @@ document.addEventListener('DOMContentLoaded', () => {
       title.textContent = "Zmień imię i nazwisko";
       input.type = "text";
       input.placeholder = "Wpisz nowe imię i nazwisko";
+    }
+
+    if(type === "nick"){
+      title.textContent = "Zmień Nick";
+      input.type = "text";
+      input.placeholder = "Wpisz nowy Nick";
     }
 
     if(type === "email"){
@@ -211,20 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function saveData(){
-
-    const input = document.getElementById("popupInput").value;
-
-    if(editType === "name"){
-      document.getElementById("userName").textContent = input;
-    }
-
-    if(editType === "email"){
-      document.getElementById("userEmail").textContent = input;
-    }
-
-    if(editType === "password"){
-      alert("Hasło zmienione (demo)");
-    }
 
     closePopup();
   }

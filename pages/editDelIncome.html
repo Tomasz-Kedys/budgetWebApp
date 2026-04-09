@@ -23,14 +23,18 @@
 
   <main class="form-container wide">
     <h1>Zmiana danych - Przychody</h1>
-    <button id="dateBtn" class="add-btn" style="margin-bottom:10px;">Data</button>
-    <div id="calendarDropdown" class="calendar-dropdown">
+    <button class="date-btn" id="dateBtn" style="margin-bottom:10px;">data</button>
+    <div class="calendar-dropdown" id="calendarDropdown">
       <div class="calendar-header">
         <button id="prevMonth" class="calendar-nav">←</button>
         <span id="calendarMonth"></span>
         <button id="nextMonth" class="calendar-nav">→</button>
       </div>
-      <div id="calendarGrid" class="calendar-grid"></div>
+      <div class="calendar-grid" id="calendarGrid"></div>
+      <div class="calendar-actions">
+        <button id="applyDateBtn" class="add-btn small">Zastosuj</button>
+        <button id="closeBtn" class="add-btn small">Close</button>
+      </div>
     </div>
     <table class="edit-table">
       <thead>
@@ -55,7 +59,7 @@
   </main>
 
   <div class="bottom-buttons">
-    <a href="settings.html" class="settings">Ustawienia</a>
+    <a href="budgetBalance.html" class="settings">Go back</a>
     <a href="login.html" class="logout">Wyloguj</a>
   </div>
 </div>
