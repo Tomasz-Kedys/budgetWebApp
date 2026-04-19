@@ -24,7 +24,12 @@
 
   <main class="form-container">
       <h1>Balance</h1>
-      <button class="date-btn" id="dateBtn">Date</button>
+      <select id="dateSelect" class="date-select">
+        <option value="currentMonth">Current Month</option>
+        <option value="previousMonth">Previous Month</option>
+        <option value="currentYear">Current Year</option>
+        <option value="custom">Custom</option>
+      </select>
       <div class="calendar-dropdown" id="calendarDropdown">
         <div class="calendar-header">
           <button id="prevMonth" class="calendar-nav">←</button>

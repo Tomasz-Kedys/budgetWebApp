@@ -75,22 +75,49 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // === KALENDARZ DROPDOWN ===
-  const dateBtn = document.getElementById('dateBtn');
   const calendarDropdown = document.getElementById('calendarDropdown');
   const calendarGrid = document.getElementById('calendarGrid');
   const calendarMonth = document.getElementById('calendarMonth');
   const prevMonthBtn = document.getElementById('prevMonth');
   const nextMonthBtn = document.getElementById('nextMonth');
+  const dateSelect = document.getElementById("dateSelect");
 
   let currentDate = new Date();
   let startDate = null;
   let endDate = null;
 
-  // Pokaz/ukryj kalendarz
-  if (dateBtn && calendarDropdown) {
-    dateBtn.addEventListener('click', () => {
-      calendarDropdown.classList.toggle('active');
-      renderCalendar(currentDate);
+  if(dateSelect){
+    dateSelect.addEventListener("change", function(){
+
+      const value = this.value;
+
+      if(value === "custom"){
+        calendarDropdown.classList.add("active");
+        renderCalendar(currentDate);
+        return;
+      }
+
+      calendarDropdown.classList.remove("active");
+
+      const today = new Date();
+      let start, end;
+
+      if(value === "currentMonth"){
+        start = new Date(today.getFullYear(), today.getMonth(), 1);
+        end = new Date(today.getFullYear(), today.getMonth()+1, 0);
+      }
+
+      if(value === "previousMonth"){
+        start = new Date(today.getFullYear(), today.getMonth()-1, 1);
+        end = new Date(today.getFullYear(), today.getMonth(), 0);
+      }
+
+      if(value === "currentYear"){
+        start = new Date(today.getFullYear(), 0, 1);
+        end = new Date(today.getFullYear(), 11, 31);
+      }
+
+      console.log("Selected range:", start, end);
     });
   }
 
@@ -183,7 +210,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if(closeBtn){
     closeBtn.addEventListener('click',()=>{
-        calendarDropdown.classList.remove('active');
+      calendarDropdown.classList.remove('active');
+
+      if(dateSelect){
+        dateSelect.value = "currentMonth";
+      }
     });
   }
 

@@ -208,6 +208,17 @@ textarea {
 /* =====================================================
   BILANS
 ===================================================== */
+.date-select{
+  padding:10px 20px;
+  border-radius:10px;
+  border:1px solid var(--color-border);
+  background-color:var(--color-bg-surface);
+  color:var(--color-text-primary);
+  font-weight:bold;
+  cursor:pointer;
+  max-width: fit-content;
+}
+
 .balance-table {
   background-color: var(--color-bg-surface);
   border: 1px solid var(--color-border);
@@ -800,5 +811,10 @@ body.dark-mode .popup-box{
 body.dark-mode .popup-box input{
   background:#2a2a2a;
   border-color:#444;
+  color:#ededed;
+}
+
+body.dark-mode .date-select{
+  background-color:#2a2a2a;
   color:#ededed;
 }
