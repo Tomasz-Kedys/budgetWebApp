@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Budget - Main Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="overlay" id="overlay"></div>
+<div class="container">
+  <header class="header">
+    <nav class="navbar" id="navigation">
+      <a href="index.html">Main Page</a>
+      <a href="pages/expense.html">Expense</a>
+      <a href="pages/income.html">Income</a>
+      <a href="pages/budgetBalance.html">Balance</a>
+      <a href="pages/settings.html" class="active">Settings</a>
+      <a href="pages/login.html">Logout</a>
+    </nav>
+    <img id="menuToggle" class="hamburger" src="assets/Ham.svg" alt="menu">
+  </header>
+
+  <main class="form-container home-balance">
+    <h1>Small Balance</h1>
+    <div class="balance-content">
+      <div class="balance-text">
+        <p><strong>Available funds:</strong> 16 351 zł</p>
+        <p><strong>Last Expence:</strong> Jedzenie -> 320 zł</p>
+      </div>
+      <div class="balance-chart">
+        <img src="assets/chart.png" alt="Balance chart" class="chart-image">
+      </div>
+    </div>
+    <a href="pages/budgetBalance.html" class="more-link">More</a>
+    <div class="adding-buttons">
+      <a href="pages/expense.html" class="add-btn">+ Expense</a>
+      <a href="pages/income.html" class="add-btn">+ Income</a>
+    </div>
+  </main>
+
+  <div class="bottom-buttons">
+    <a href="pages/settings.html" class="settings">Income</a>
+    <a href="pages/login.html" class="logout">Logout</a>
+  </div>
+</div>
+
+<script src="Scripts.js"></script>
+</body>
+</html>
