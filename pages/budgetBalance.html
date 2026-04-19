@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bilans</title>
+  <title>Balance</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -12,19 +12,19 @@
 <div class="container">
   <header class="header">
     <nav class="navbar" id="navigation">
-      <a href="mainPage.html">Strona główna</a>
-      <a href="expense.html">Wydatek</a>
-      <a href="income.html">Przychód</a>
-      <a href="budgetBalance.html" class="active">Bilans</a>
-      <a href="settings.html">Ustawienia</a>
-      <a href="login.html">Wyloguj</a>
+      <a href="mainPage.html">Main Page</a>
+      <a href="expense.html">Expense</a>
+      <a href="income.html">Income</a>
+      <a href="budgetBalance.html">Balance</a>
+      <a href="settings.html" class="active">Settings</a>
+      <a href="login.html">Logout</a>
     </nav>
     <img id="menuToggle" class="hamburger" src="../assets/Ham.svg" alt="menu">
   </header>
 
   <main class="form-container">
-      <h1>Bilans</h1>
-      <button class="date-btn" id="dateBtn">data</button>
+      <h1>Balance</h1>
+      <button class="date-btn" id="dateBtn">Date</button>
       <div class="calendar-dropdown" id="calendarDropdown">
         <div class="calendar-header">
           <button id="prevMonth" class="calendar-nav">←</button>
@@ -33,7 +33,7 @@
         </div>
         <div class="calendar-grid" id="calendarGrid"></div>
         <div class="calendar-actions">
-          <button id="applyDateBtn" class="add-btn small">Zastosuj</button>
+          <button id="applyDateBtn" class="add-btn small">Save</button>
           <button id="closeBtn" class="add-btn small">Close</button>
         </div>
       </div>
@@ -59,11 +59,11 @@
         </table>
       </div>
 
-      <div class="range-bar">bilans z zakresu ...</div>
+      <div class="range-bar">Balnce from selected period ...</div>
 
       <div class="charts">
-        <div class="bar-chart">📊 wykres słupkowy</div>
-        <div class="donut-chart">🟢 wykres kołowy</div>
+        <div class="bar-chart">📊 Bar chart</div>
+        <div class="donut-chart">🟢 Pie chart</div>
       </div>
 
       <div class="actions">
@@ -73,8 +73,8 @@
   </main>
 
   <div class="bottom-buttons">
-    <a href="settings.html" class="settings">Ustawienia</a>
-    <a href="login.html" class="logout">Wyloguj się</a>
+    <a href="settings.html" class="settings">Settings</a>
+    <a href="login.html" class="logout">Logout</a>
   </div>
 </div>
 
