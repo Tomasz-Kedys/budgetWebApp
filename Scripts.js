@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let darkMode = localStorage.getItem('darkMode') === 'true';
   if (darkMode) {
     document.body.classList.add('dark-mode');
-    if (themeToggle) themeToggle.textContent = '☀️ Tryb jasny';
+    if (themeToggle) themeToggle.textContent = '☀️ Light Mode';
     menuToggle.src = icons.dark.menu;
   } else {
     menuToggle.src = icons.light.menu;
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
       darkMode = !darkMode;
       document.body.classList.toggle('dark-mode');
       localStorage.setItem('darkMode', darkMode);
-      themeToggle.textContent = darkMode ? '☀️ Tryb jasny' : '🌙 Tryb ciemny';
+      themeToggle.textContent = darkMode ? '☀️ Light Mode' : '🌙 Dark Mode';
 
       const isOpen = navigation.classList.contains('active');
       const iconSet = darkMode ? icons.dark : icons.light;
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const firstDay = new Date(year, month, 1);
     const lastDay = new Date(year, month + 1, 0);
 
-    calendarMonth.textContent = `${firstDay.toLocaleString('pl-PL', { month: 'long' })} ${year}`;
+    calendarMonth.textContent = `${firstDay.toLocaleString('en-US', { month: 'long' })} ${year}`;
 
     // Puste pola przed początkiem miesiąca
     const startOffset = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1;
@@ -202,27 +202,27 @@ let editType = "";
     editType = type;
 
     if(type === "name"){
-      title.textContent = "Zmień imię i nazwisko";
+      title.textContent = "Change Name";
       input.type = "text";
-      input.placeholder = "Wpisz nowe imię i nazwisko";
+      input.placeholder = "Give new Name";
     }
 
     if(type === "nick"){
-      title.textContent = "Zmień Nick";
+      title.textContent = "Change Nick";
       input.type = "text";
-      input.placeholder = "Wpisz nowy Nick";
+      input.placeholder = "Give new Nick";
     }
 
     if(type === "email"){
-      title.textContent = "Zmień e-mail";
+      title.textContent = "Change E-mail";
       input.type = "email";
-      input.placeholder = "Wpisz nowy e-mail";
+      input.placeholder = "Give new E-mail";
     }
 
     if(type === "password"){
-      title.textContent = "Zmień hasło";
+      title.textContent = "Change Password";
       input.type = "password";
-      input.placeholder = "Wpisz nowe hasło";
+      input.placeholder = "Give new Password";
     }
 
     input.value = "";

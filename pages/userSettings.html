@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dane użytkownika</title>
+  <title>User Data</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
 
@@ -12,44 +12,44 @@
 <div class="container">
   <header class="header">
     <nav class="navbar" id="navigation">
-      <a href="mainPage.html">Strona główna</a>
-      <a href="expense.html">Wydatek</a>
-      <a href="income.html">Przychód</a>
-      <a href="budgetBalance.html">Bilans</a>
-      <a href="settings.html" class="active">Ustawienia</a>
-      <a href="login.html">Wyloguj</a>
+      <a href="mainPage.html">Main Page</a>
+      <a href="expense.html">Expense</a>
+      <a href="income.html">Income</a>
+      <a href="budgetBalance.html">Balance</a>
+      <a href="settings.html" class="active">Settings</a>
+      <a href="login.html">Logout</a>
     </nav>
     <img id="menuToggle" class="hamburger" src="../assets/Ham.svg" alt="menu">
   </header>
 
   <main class="form-container">
-    <h1>Dane użytkownika</h1>
+    <h1>User Data</h1>
     <div class="user-data">
       <div class="user-row">
-        <span>Imię i nazwisko : <b id="userName">Jan Kowalski</b></span>
-        <button class="add-btn small" onclick="openPopup('name')">Zmień</button>
+        <span>Name : <b id="userName">Jhon Doe</b></span>
+        <button class="add-btn small" onclick="openPopup('name')">Change</button>
       </div>
 
       <div class="user-row">
-        <span>Nick : <b id="Nick">Janek</b></span>
-        <button class="add-btn small" onclick="openPopup('nick')">Zmień</button>
+        <span>Nick : <b id="Nick">Jhon</b></span>
+        <button class="add-btn small" onclick="openPopup('nick')">Change</button>
       </div>
 
       <div class="user-row">
-        <span>E-mail : <b id="userEmail">jan@email.com</b></span>
-        <button class="add-btn small" onclick="openPopup('email')">Zmień</button>
+        <span>E-mail : <b id="userEmail">jhon@email.com</b></span>
+        <button class="add-btn small" onclick="openPopup('email')">Change</button>
       </div>
 
       <div class="user-row">
-        <span>Hasło : <b>••••••••••••••••••••••</b></span>
-        <button class="add-btn small" onclick="openPopup('password')">Zmień</button>
+        <span>Password : <b>••••••••••••••••••••••</b></span>
+        <button class="add-btn small" onclick="openPopup('password')">Change</button>
       </div>
     </div>
   </main>
 
   <div class="bottom-buttons">
-    <a href="settings.html" class="settings">Powrót</a>
-    <a href="login.html" class="logout">Wyloguj</a>
+    <a href="settings.html" class="settings">Back</a>
+    <a href="login.html" class="logout">Logout</a>
   </div>
 </div>
 
@@ -62,8 +62,8 @@
     <input id="popupInput" type="text">
 
     <div class="popup-buttons">
-      <button class="add-btn" onclick="saveData()">Zapisz</button>
-      <button class="add-btn" id="cancel" onclick="closePopup()">Anuluj</button>
+      <button class="add-btn" onclick="saveData()">Save</button>
+      <button class="add-btn" id="cancel" onclick="closePopup()">Cancel</button>
     </div>
 
   </div>

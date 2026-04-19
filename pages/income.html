@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dodaj przychód</title>
+  <title>Add Income</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -12,32 +12,32 @@
 <div class="container">
   <header class="header">
     <nav class="navbar" id="navigation">
-      <a href="mainPage.html">Strona główna</a>
-      <a href="expense.html">Wydatek</a>
-      <a href="income.html" class="active">Przychód</a>
-      <a href="budgetBalance.html">Bilans</a>
-      <a href="settings.html">Ustawienia</a>
-      <a href="login.html">Wyloguj</a>
+      <a href="mainPage.html">Main Page</a>
+      <a href="expense.html">Expense</a>
+      <a href="income.html">Income</a>
+      <a href="budgetBalance.html">Balance</a>
+      <a href="settings.html" class="active">Settings</a>
+      <a href="login.html">Logout</a>
     </nav>
     <img id="menuToggle" class="hamburger" src="../assets/Ham.svg" alt="menu">
   </header>
 
   <main class="form-container">
-    <h1>Dodaj przychód</h1>
+    <h1>Add Income</h1>
     <form>
-      <input type="text" placeholder="Źródło przychodu" required>
-      <input type="number" placeholder="Kwota (zł)" required>
-      <textarea placeholder="Opis (opcjonalnie)"></textarea>
+      <input type="text" placeholder="Income Name" required>
+      <input type="number" placeholder="Amount (zł)" required>
+      <textarea placeholder="Description (Optional)"></textarea>
       <div class="adding-buttons">
-        <button class="add-btn" type="submit">Zapisz</button>
-        <a href="mainPage.html" class="add-btn" id="cancel">Anuluj</a>
+        <button class="add-btn" type="submit">Save</button>
+        <a href="mainPage.html" class="add-btn" id="cancel">Cancel</a>
       </div>
     </form>
   </main>
 
   <div class="bottom-buttons">
-    <a href="settings.html" class="settings">Ustawienia</a>
-    <a href="login.html" class="logout">Wyloguj się</a>
+    <a href="settings.html" class="settings">Settings</a>
+    <a href="login.html" class="logout">Logout</a>
   </div>
 </div>
 
