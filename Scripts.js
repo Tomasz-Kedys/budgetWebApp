@@ -8,14 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!menuToggle || !navigation || !overlay) return;
 
   // Ikony menu i zamknięcia
+  const basePath = window.location.pathname.includes('/pages/')
+  ? '../assets/'
+  : 'assets/';
+
   const icons = {
     light: {
-      menu: '../assets/Ham.svg',
-      close: '../assets/Close.svg'
+      menu: `${basePath}Ham.svg`,
+      close: `${basePath}Close.svg`
     },
     dark: {
-      menu: '../assets/InvHam.svg',
-      close: '../assets/InvClose.svg'
+      menu: `${basePath}InvHam.svg`,
+      close: `${basePath}InvClose.svg`
     }
   };
 
